@@ -1,0 +1,70 @@
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sprite {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    margin-bottom: 120px;
+}
+
+.idle {
+  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Idle.png");
+  background-position: left center;
+  animation: idleAnim 1s steps(10) infinite alternate;
+  transform: translateX(28px) scale(6);
+}
+
+@keyframes idleAnim {
+  from { background-position: 0px; }
+  to   { background-position: -320px; }
+}
+
+.dance {
+  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Dance.png");
+  background-position: left center;
+  animation: danceAnim 0.5s steps(4) alternate 6;
+  transform: scale(6);
+}
+
+
+@keyframes danceAnim {
+  from { background-position: 0px; }
+  to   { background-position: -128px; }
+}
+
+.feed {
+    background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Eating.png");
+    background-position: left center;
+    animation: feedAnim 1.2s steps(15) alternate 6;
+    transform: scale(6);
+}
+
+@keyframes feedAnim {
+    from { background-position: 0px; }
+    to {background-position: -480px; }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px; 
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
