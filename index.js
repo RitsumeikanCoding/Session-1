@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedButton = document.getElementById("feedButton");
   const cat = document.getElementById("cat");
   const danceButton = document.getElementById("danceButton");
+  const userInput = document.getElementById("userInput");
 
   function disableButtons() {
     feedButton.disabled = true;
@@ -39,8 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
       cat.removeEventListener("animationend", handler);
     });
   });
-  
+
+  let isAnimating = false;
+
   cat.addEventListener("click", () => {
+    if (isAnimating) return;
+    isAnimating = true;
     cat.classList.remove("idle");
     cat.classList.add("cry");
     disableButtons();
@@ -49,8 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
       cat.classList.remove("cry");
       cat.classList.add("idle");
       enableButtons();
+      isAnimating = false;
       cat.removeEventListener("animationend", handler)
     });
   });
 
+  userInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      const value = userInput.value;
+      window.dispatchEvent(new CustomEvent("userInputEntered", { detail: value }));
+      userInput.value = "";
+    }
+  });
 });

@@ -80,3 +80,32 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
+input[type="text"] {
+  margin: 10px 0;
+  padding: 6px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  background: #222;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.response-box {
+  visibility: hidden;
+  opacity: 0;
+  margin: 60px 0;
+  min-height: 40px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  word-break: break-word;
+  transition: opacity 0.3s, visibility 0.3s;
+}
