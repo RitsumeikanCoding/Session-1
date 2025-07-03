@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cat.classList.add("dance");
     disableButtons();
 
-    // After animation, return to idle
     cat.addEventListener("animationend", function handler() {
       cat.classList.remove("dance");
       cat.classList.add("idle");
@@ -42,7 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   cat.addEventListener("click", () => {
-    console.log("Cat sprite was clicked!");
+    cat.classList.remove("idle");
+    cat.classList.add("cry");
+    disableButtons();
+
+    cat.addEventListener("animationend", function handler() {
+      cat.classList.remove("cry");
+      cat.classList.add("idle");
+      enableButtons();
+      cat.removeEventListener("animationend", handler)
+    });
   });
 
 });

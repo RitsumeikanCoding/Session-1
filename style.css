@@ -42,13 +42,25 @@ body {
 .feed {
     background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Eating.png");
     background-position: left center;
-    animation: feedAnim 1.2s steps(15) alternate 6;
+    animation: feedAnim 1.2s steps(15) alternate 4;
     transform: scale(6);
 }
 
 @keyframes feedAnim {
     from { background-position: 0px; }
     to {background-position: -480px; }
+}
+
+.cry {
+  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Cry.png");
+  background-position: left center;
+  animation: cryAnim 0.5s steps(4) alternate 6;
+  transform: scale(6);
+}
+
+@keyframes cryAnim {
+  from {background-position: 0px;}
+  to {background-position: -128px;}
 }
 
 .container {
