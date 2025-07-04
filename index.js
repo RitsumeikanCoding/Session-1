@@ -25,21 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
       cat.classList.add("idle");
       enableButtons();
       cat.removeEventListener("animationend", handler);
-      hunger += 3;
-      //updateStatusDisplay();
+      hunger = 10; // Reset hunger to 10
+      updateStatusDisplay();
     });
   });
 
   danceButton.addEventListener("click", () => {
     cat.classList.remove("idle");
     cat.classList.add("dance");
+    // Decrease hunger every second while dancing
+    const danceInterval = setInterval(() => {hunger--; updateStatusDisplay();}, 1000);
     disableButtons();
-
     cat.addEventListener("animationend", function handler() {
       cat.classList.remove("dance");
       cat.classList.add("idle");
       enableButtons();
       cat.removeEventListener("animationend", handler);
+      clearInterval(danceInterval);
     });
   });
 

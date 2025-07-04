@@ -7,6 +7,9 @@
       hunger--;
     } else if (health > 0) {
       health--;
+      //add a damage event to the cat sprite when health is lost
+      const cat = document.getElementById("cat");
+      cat.classList.add("damaged");
     }
 
     if (health === 0) {
@@ -62,6 +65,7 @@
       img.style.padding = "2px";
       healthContainer.appendChild(img);
     }
+
   }
 
   updateStatusDisplay();
