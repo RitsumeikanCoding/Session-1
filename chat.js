@@ -20,12 +20,10 @@ window.addEventListener("userInputEntered", async function(e) {
     const data = await response.json();
     console.log("OpenAI Response:", data);
 
-    // Show response box and set text
     responseBox.style.visibility = "visible";
     responseBox.style.opacity = "1";
     responseBox.textContent = data.reply || "No response";
 
-    // Clear after 6 seconds
     clearTimeout(responseBox._hideTimeout);
     responseBox._hideTimeout = setTimeout(() => {
       responseBox.style.visibility = "hidden";
