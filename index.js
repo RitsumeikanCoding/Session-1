@@ -52,5 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-//Comment to force commit.
 

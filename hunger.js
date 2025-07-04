@@ -70,4 +70,3 @@
 
   updateStatusDisplay();
   setInterval(updateStatusDisplay, 3000);
-//Comment to force commit.

@@ -45,5 +45,3 @@ window.addEventListener("userInputEntered", async function(e) {
     }, 6000);
   }
 });
-
-//Comment to force commit.
