@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cat.classList.remove("feed");
       cat.classList.add("idle");
       cat.removeEventListener("animationend", handler);
+      hunger += 3;
+      //updateStatusDisplay();
     });
   });
 
@@ -31,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Cat sprite was clicked!");
   });
 
+  
 });
