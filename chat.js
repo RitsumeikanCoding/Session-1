@@ -44,4 +44,3 @@ window.addEventListener("userInputEntered", async function(e) {
     }, 6000);
   }
 });
-

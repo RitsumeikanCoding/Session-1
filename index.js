@@ -25,46 +25,31 @@ document.addEventListener("DOMContentLoaded", () => {
       cat.classList.add("idle");
       enableButtons();
       cat.removeEventListener("animationend", handler);
+      hunger = 10; // Reset hunger to 10
+      updateStatusDisplay();
     });
   });
 
   danceButton.addEventListener("click", () => {
     cat.classList.remove("idle");
     cat.classList.add("dance");
+    // Decrease hunger every second while dancing
+    const danceInterval = setInterval(() => {hunger--; updateStatusDisplay();}, 1000);
     disableButtons();
-
     cat.addEventListener("animationend", function handler() {
       cat.classList.remove("dance");
       cat.classList.add("idle");
       enableButtons();
       cat.removeEventListener("animationend", handler);
+      clearInterval(danceInterval);
     });
   });
 
   let isAnimating = false;
 
   cat.addEventListener("click", () => {
-    if (isAnimating) return;
-    isAnimating = true;
-    cat.classList.remove("idle");
-    cat.classList.add("cry");
-    disableButtons();
-
-    cat.addEventListener("animationend", function handler() {
-      cat.classList.remove("cry");
-      cat.classList.add("idle");
-      enableButtons();
-      isAnimating = false;
-      cat.removeEventListener("animationend", handler)
-    });
+    console.log("Cat sprite was clicked!");
   });
 
-  userInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      const value = userInput.value;
-      window.dispatchEvent(new CustomEvent("userInputEntered", { detail: value }));
-      userInput.value = "";
-      //console.info("User input sent:", value); //Added for debugging
-    }
-  });
 });
+
