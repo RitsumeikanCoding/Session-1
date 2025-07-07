@@ -1,6 +1,7 @@
 window.addEventListener("userInputEntered", async function(e) {
   const inputValue = e.detail;
   console.log("User:", inputValue);
+  console.log("Sending request to backend...");
 
   const responseBox = document.getElementById("responseBox");
 

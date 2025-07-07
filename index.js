@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const value = userInput.value;
       window.dispatchEvent(new CustomEvent("userInputEntered", { detail: value }));
       userInput.value = "";
+      //console.info("User input sent:", value); //Added for debugging
     }
   });
 });

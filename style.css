@@ -109,3 +109,11 @@ input[type="text"] {
   word-break: break-word;
   transition: opacity 0.3s, visibility 0.3s;
 }
+.stats {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 0; 
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+}

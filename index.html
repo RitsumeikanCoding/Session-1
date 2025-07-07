@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Website</title>
+    <title>Cat Game</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js"></script>
+    <script type="module" src="chat.js"></script>
+    <script type="module" src="stats.js"></script>
   </head>
-  <body>
-    <div class="container">
+  <body style="  transform: scale(1.5, 1.5);">
+    <div class="container">1
+      <div id="health" class="stats"></div>
+      <div id="hunger" class="stats"></div>
+
         <div id="responseBox" class="response-box"></div>
         <div id="cat" class="sprite idle"></div>
         <div class="button-row">
@@ -17,7 +23,5 @@
         </div>
         <input type="text" id="userInput" placeholder="" />
     </div>
-    <script src="index.js"></script>
-    <script type="module" src="chat.js"></script>
   </body>
 </html>
