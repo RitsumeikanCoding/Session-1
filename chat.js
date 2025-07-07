@@ -1,3 +1,4 @@
+console.log("Chat script loaded");
 window.addEventListener("userInputEntered", async function(e) {
   const inputValue = e.detail;
   console.log("User:", inputValue);
