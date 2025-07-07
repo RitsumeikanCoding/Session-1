@@ -15,7 +15,7 @@ body {
 }
 
 .idle {
-  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Idle.png");
+  background-image: url("resources/Idle.png");
   background-position: left center;
   animation: idleAnim 1s steps(10) infinite alternate;
   transform: translateX(28px) scale(6);
@@ -27,7 +27,7 @@ body {
 }
 
 .dance {
-  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Dance.png");
+  background-image: url("resources/Dance.png");
   background-position: left center;
   animation: danceAnim 0.5s steps(4) alternate 6;
   transform: scale(6);
@@ -40,7 +40,7 @@ body {
 }
 
 .feed {
-    background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Eating.png");
+    background-image: url("resources/Eating.png");
     background-position: left center;
     animation: feedAnim 1.2s steps(15) alternate 4;
     transform: scale(6);
@@ -52,7 +52,7 @@ body {
 }
 
 .cry {
-  background-image: url("Resources/CatPackPaid/Sprites/Classical/Individual/Cry.png");
+  background-image: url("resources/Cry.png");
   background-position: left center;
   animation: cryAnim 0.5s steps(4) alternate 6;
   transform: scale(6);
