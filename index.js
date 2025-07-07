@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const cat = document.getElementById("cat");
   const danceButton = document.getElementById("danceButton");
   const userInput = document.getElementById("userInput");
+  const responseBox = document.getElementById("responseBox");
+
+  let hunger = 3;
 
   function disableButtons() {
     feedButton.disabled = true;
@@ -15,9 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   feedButton.addEventListener("click", () => {
+    if (hunger >= 3) {
+      responseBox.style.visibility = "visible";
+      responseBox.style.opacity = "1";
+      responseBox.textContent = "I'm like a baloon mate";
+      clearTimeout(responseBox._hideTimeout);
+      responseBox._hideTimeout = setTimeout(() => {
+        responseBox.style.visibility = "hidden";
+        responseBox.style.opacity = "0";
+        responseBox.textContent = "";
+      }, 6000);
+      return;
+    }
     cat.classList.remove("idle");
     cat.classList.add("feed");
     disableButtons();
+
+    hunger++;
+    document.getElementById("hunger" + hunger).style.opacity = 1;
+
 
     // After animation, return to idle
     cat.addEventListener("animationend", function handler() {
@@ -30,12 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  danceButton.addEventListener("click", () => {
+  danceButton.addEventListener("click", () => {7
+     if (hunger <= 0) {
+      responseBox.style.visibility = "visible";
+      responseBox.style.opacity = "1";
+      responseBox.textContent = "I'm starving, you monster!";
+      clearTimeout(responseBox._hideTimeout);
+      responseBox._hideTimeout = setTimeout(() => {
+        responseBox.style.visibility = "hidden";
+        responseBox.style.opacity = "0";
+        responseBox.textContent = "";
+      }, 6000);
+      return;
+    }
     cat.classList.remove("idle");
     cat.classList.add("dance");
     // Decrease hunger every second while dancing
     const danceInterval = setInterval(() => {hunger--; updateStatusDisplay();}, 1000);
     disableButtons();
+
+    document.getElementById("hunger" + hunger).style.opacity = 0.2;
+    hunger--;
+
     cat.addEventListener("animationend", function handler() {
       cat.classList.remove("dance");
       cat.classList.add("idle");

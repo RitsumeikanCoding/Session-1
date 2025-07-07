@@ -75,6 +75,19 @@ body {
   gap: 10px; 
 }
 
+.hunger-row {
+  display: flex;
+  gap: 10px; 
+}
+
+.hunger {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  background-image: url(Sprites/food.png);
+}
+
 button {
   padding: 8px 16px;
   font-size: 16px;
