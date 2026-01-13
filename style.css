@@ -85,7 +85,7 @@ body {
   height: 30px;
   background-position: center;
   background-size: contain;
-  background-image: url(Sprites/food.png);
+  background-image: url(resources/food.png);
 }
 
 button {

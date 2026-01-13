@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hunger >= 3) {
       responseBox.style.visibility = "visible";
       responseBox.style.opacity = "1";
-      responseBox.textContent = "I'm like a baloon mate";
+      responseBox.textContent = "I'm like a baloon mate.";
       clearTimeout(responseBox._hideTimeout);
       responseBox._hideTimeout = setTimeout(() => {
         responseBox.style.visibility = "hidden";
